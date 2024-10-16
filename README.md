@@ -1,12 +1,13 @@
-**ChIP seq**
+# ChIP-seq
+
 This ChIPseq analysis was performed as an indivisual project as a part of BF528 Applications in Translational Bioinformatics course Spring 2024
 
 ChIP seq dataset consisting of 2 paired experiments (IP and Control) derived from Mus musculus for a total of 4 samples was provided for this analysis.
 
-**Methods**
+# Methods
 ChIP seq samples from 2 paired experiments (IP and Control) derived from Mus musculus for a total of 4 samples were used for this experiment. Initial Quality control was performed using FastQC v0.12.0. Adapter trimming was performed using trimmomatic v0.27. Genome index was built using Bowtie2 v2.5.3 with default parameters. Align reads to the mouse primary assemble reference genome (GRCh38.p14) using Bowtie2 v2.5.3. with default parameters. Quality control of the alignment was performed using samtools v1.19.2. and compiled using MultiQC v1.21. with default parameters. BigWig files were generated using the bamcoverage utility in deeptools v2.0. with default parameters. Peak calling was performed with input as the bacground enrichment control using HOMER v4.11 with default parameters. A single list of reproducible peaks was determined using v2.31.0 with the intersections / Unions of peaks method using default parameters. Next single artifact regions from the peak lists were removed using bedtools v2.31.0. with default parameters. Peaks were annotated to their nearest genomic feature with reference to the Genome Reference Consortium Human Build 38 (hg38) using HOMER v4.11 with default parameters. Motif finding was performed to look for enrichment of known binding sequences using HOMER v4.11 with default parameters.
 
-**Questions to Address**
+# Questions to Address
 Briefly remark on the quality of the sequencing reads and the alignment statistics, make sure to specifically mention the following:
 
 Are there any concerning aspects of the quality control of your sequencing reads?
@@ -17,7 +18,8 @@ How many peaks are present in each of the replicates?
 How many peaks are present in your set of reproducible peaks? What strategy did you use to determine “reproducible” peaks?
 How many peaks remain after filtering out peaks overlapping blacklisted regions? After performing motif analysis and gene enrichment on the peak annotations, please answer the following:
 Briefly discuss the main results of both of these analyses and what they might imply about the function of the factor we are interested in.
-**Deliverables**
+
+# Deliverables
 1.Produce a heatmap of correlation values between samples.
 
 2.Generate a “fingerprint” plot using the deeptools plotFingerprint utility
